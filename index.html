@@ -33,13 +33,13 @@
   <!-- Prompt IE 6 users to install Chrome Frame. Remove this if you support IE 6.
        chromium.org/developers/how-tos/chrome-frame-getting-started -->
   <!--[if lt IE 7]><p class=chromeframe>Your browser is <em>ancient!</em> <a href="http://browsehappy.com/">Upgrade to a different browser</a> or <a href="http://www.google.com/chromeframe/?redirect=true">install Google Chrome Frame</a> to experience this site.</p><![endif]-->
-  <header>
 
-  </header>
   <div role="main">
   	
-  	
-  	<aside>
+  	<aside class="toc-menu">
+  		<div>
+  			<h1>Web Development Resources</h1>
+  		</div>
   		<nav>
   			<ul>
   				<li><a href="#html">HTML</a></li>
@@ -56,18 +56,7 @@
   	</aside>
   	
   	<div class="content-scroller">
-  		<div class="content-wrapper">
-  			
-	  		<!-- Template -->
-	  		<article id="">
-	  			<h2></h2>
-	  			<dl>
-	  				<dt></dt>
-	  				<dd>
-	  					
-	  				</dd>
-	  			</dl>
-	  		</article>  			
+  		<div class="content-wrapper">  			
 	
 	  		<!-- HTML Resources -->
 	  		<article id="html">
@@ -323,5 +312,20 @@
     g.src=('https:'==location.protocol?'//ssl':'//www')+'.google-analytics.com/ga.js';
     s.parentNode.insertBefore(g,s)}(document,'script'));
   </script>
+  
+  <script type="text/template" id="content-template">
+  	<article id="">
+		<h2></h2>
+		<dl>
+			<dt></dt>
+			<dd>
+				
+			</dd>
+		</dl>
+	</article>
+  </script>
+  
+  
+  
 </body>
 </html>
