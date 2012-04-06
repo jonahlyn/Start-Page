@@ -34,7 +34,7 @@
        chromium.org/developers/how-tos/chrome-frame-getting-started -->
   <!--[if lt IE 7]><p class=chromeframe>Your browser is <em>ancient!</em> <a href="http://browsehappy.com/">Upgrade to a different browser</a> or <a href="http://www.google.com/chromeframe/?redirect=true">install Google Chrome Frame</a> to experience this site.</p><![endif]-->
 
-  <div role="main">
+  <div role="main" id="content">
   	
   	<aside class="toc-menu">
   		<div>
@@ -56,7 +56,7 @@
   	</aside>
   	
   	<div class="content-scroller">
-  		<div class="content-wrapper">  			
+  		<div class="content-wrapper">
 	
 	  		<!-- HTML Resources -->
 	  		<article id="html">
@@ -298,6 +298,7 @@
   <!-- Grab Google CDN's jQuery, with a protocol relative URL; fall back to local if offline -->
   <script src="//ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
   <script>window.jQuery || document.write('<script src="js/libs/jquery-1.7.1.min.js"><\/script>')</script>
+  <script src="js/libs/waypoints.min.js"></script>
 
   <!-- scripts concatenated and minified via build script -->
   <script src="js/plugins.js"></script>
@@ -311,6 +312,32 @@
     (function(d,t){var g=d.createElement(t),s=d.getElementsByTagName(t)[0];
     g.src=('https:'==location.protocol?'//ssl':'//www')+'.google-analytics.com/ga.js';
     s.parentNode.insertBefore(g,s)}(document,'script'));
+  </script>
+  
+  <script>
+  	$(function(){
+  		
+  		var navlinks = $('.toc-menu nav a'),
+  			articles = $('article'),
+  			last = articles.last();
+  			
+		$('.content-wrapper').css({'padding-bottom': document.documentElement.clientHeight - last.outerHeight()});
+  			
+  		articles.waypoint({
+  			handler: function(e,d){
+  				var activeArticle = $(this),
+  					activeLink;
+
+  				if (d === 'up') { activeArticle = activeArticle.prev(); }
+  				
+  				activeLink = $('nav a[href="#' + activeArticle.attr('id') + '"]');
+  				navlinks.add(articles).removeClass('selected');
+  				activeLink.add(activeArticle).addClass('selected');
+  				
+  			},
+  			offset: '5px'
+  		});
+  	});
   </script>
   
   <script type="text/template" id="content-template">

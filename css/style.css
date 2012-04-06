@@ -217,6 +217,8 @@ td { vertical-align: top; }
 /* ==|== primary styles =====================================================
    Author:
    ========================================================================== */
+  
+
    
 /* Navigation */
 .toc-menu {
@@ -250,12 +252,10 @@ td { vertical-align: top; }
 	transition: background 0.3s linear;
 }
 
-.toc-menu nav a:hover {
+.toc-menu nav a:hover, 
+.toc-menu nav a:active,
+.toc-menu nav a.selected {
 	background: #f1f5f8;
-}
-
-.toc-menu nav a:active {
-	box-shadow: 7px 0px 17px #000 inset;
 }
 
 .toc-menu nav li:first-child a {
@@ -268,25 +268,22 @@ td { vertical-align: top; }
 	position: absolute;
 	left: 200px;
 	right: 0px;
-	overflow: hidden;
 	height: 100%;
-}
-
-.content-wrapper {
-	height: 100%;
-	overflow-y: scroll;
-	position: absolute;
-}
+} 
 
 .content-wrapper article h2,
 .content-wrapper article dl {
 	padding: 10px 20px;
+	margin-top: 0;
 }
 
 .content-wrapper article dt {
 	font-weight: bold;
 }
 
+.content-wrapper article.selected {
+	background: #f1f5f8;
+}
 
 
 
