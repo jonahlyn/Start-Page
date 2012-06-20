@@ -217,10 +217,42 @@ td { vertical-align: top; }
 /* ==|== primary styles =====================================================
    Author:
    ========================================================================== */
-  
 
+/* scrollbar settings */
+html {
+	overflow-y: auto;
+	background-color: transparent;
+}
+
+/* scrollbar buttons at start and end */
+::-webkit-scrollbar-button:start:decrement,
+::-webkit-scrollbar-button:end:increment  {
+	height: 5px;
+	display: block;
+	background-color: transparent;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+    -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3); 
+    -webkit-border-radius: 10px;
+    border-radius: 10px;
+}
+
+/* scrollbar thumb */
+::-webkit-scrollbar-thumb:vertical {
+    -webkit-border-radius: 10px;
+    border-radius: 10px;
+    background: rgba(241, 245, 248,0.8); 
+    -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.5); 
+}
    
 /* Navigation */
+::-webkit-scrollbar {
+	width: 10px;
+	height: 10px;
+}
+
 .toc-menu {
 	position: fixed;
 	z-index: 100;
@@ -240,6 +272,7 @@ td { vertical-align: top; }
 	left: 0px;
 	right: 0px;
 	bottom: 50px;
+	overflow-y: auto;
 }
 
 .toc-menu nav a {
